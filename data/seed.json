@@ -1,0 +1,372 @@
+{
+  "metadata": {
+    "name": "TN Lens",
+    "subtitle": "Public issues intelligence for Tamil Nadu",
+    "snapshot_as_of": "2026-10-22",
+    "editorial_policy": "Public-source research only. No voter profiling, political microtargeting, persuasion scoring or election forecasts. Programme figures are identified as organiser-reported, never audited by default.",
+    "affiliation": "Independent prototype. Not affiliated with We The Leaders, K. Annamalai or any government body."
+  },
+  "districts": [
+    "Ariyalur",
+    "Chengalpattu",
+    "Chennai",
+    "Coimbatore",
+    "Cuddalore",
+    "Dharmapuri",
+    "Dindigul",
+    "Erode",
+    "Kallakurichi",
+    "Kancheepuram",
+    "Kanniyakumari",
+    "Karur",
+    "Krishnagiri",
+    "Madurai",
+    "Mayiladuthurai",
+    "Nagapattinam",
+    "Namakkal",
+    "The Nilgiris",
+    "Perambalur",
+    "Pudukkottai",
+    "Ramanathapuram",
+    "Ranipet",
+    "Salem",
+    "Sivaganga",
+    "Tenkasi",
+    "Thanjavur",
+    "Theni",
+    "Thoothukudi",
+    "Tiruchirappalli",
+    "Tirunelveli",
+    "Tirupathur",
+    "Tiruppur",
+    "Tiruvallur",
+    "Tiruvannamalai",
+    "Tiruvarur",
+    "Vellore",
+    "Viluppuram",
+    "Virudhunagar"
+  ],
+  "election": {
+    "title": "2026 Tamil Nadu Legislative Assembly — declared seats",
+    "total_seats": 234,
+    "source_label": "Election Commission of India — detailed 2026 results",
+    "source_url": "https://www.eci.gov.in/eci-backend/public/all_files/election_report/General_Election_to_the_Legislative_Assembly_of_Tamil_Nadu_2026_2026/10-Detailed_Results_1778165153.pdf",
+    "data_type": "historical_official",
+    "notes": "Historical seat results; not current Assembly strength and not a forecast.",
+    "seats": [
+      {
+        "party": "TVK",
+        "seats": 108
+      },
+      {
+        "party": "DMK",
+        "seats": 59
+      },
+      {
+        "party": "AIADMK",
+        "seats": 47
+      },
+      {
+        "party": "INC",
+        "seats": 5
+      },
+      {
+        "party": "PMK",
+        "seats": 4
+      },
+      {
+        "party": "IUML",
+        "seats": 2
+      },
+      {
+        "party": "VCK",
+        "seats": 2
+      },
+      {
+        "party": "CPI",
+        "seats": 2
+      },
+      {
+        "party": "CPI(M)",
+        "seats": 2
+      },
+      {
+        "party": "BJP",
+        "seats": 1
+      },
+      {
+        "party": "DMDK",
+        "seats": 1
+      },
+      {
+        "party": "AMMK",
+        "seats": 1
+      }
+    ]
+  },
+  "programme_metrics": [
+    {
+      "id": "m1",
+      "label": "Drug-Free Tamil Nadu — July events",
+      "value": 612,
+      "unit": "events",
+      "period": "July 2026",
+      "verification": "organiser_reported",
+      "source_label": "We The Leaders August 2026 newsletter",
+      "source_url": "https://www.wetheleader.org/newsletter-august-2026",
+      "caveat": "Events are activity counts, not measured prevention outcomes."
+    },
+    {
+      "id": "m2",
+      "label": "July volunteer leaders",
+      "value": 392,
+      "unit": "leaders",
+      "period": "July 2026",
+      "verification": "organiser_reported",
+      "source_label": "We The Leaders August 2026 newsletter",
+      "source_url": "https://www.wetheleader.org/newsletter-august-2026",
+      "caveat": "Organiser-reported mobilisation."
+    },
+    {
+      "id": "m3",
+      "label": "Clean & Sustainable — events",
+      "value": 2700,
+      "unit": "events (lower bound)",
+      "period": "Aug–Sep 2026",
+      "verification": "organiser_reported",
+      "source_label": "We The Leaders theme report",
+      "source_url": "https://www.wetheleader.org/theme-detail",
+      "caveat": "Official programme page says 2,700+; exact total not established."
+    },
+    {
+      "id": "m4",
+      "label": "Clean & Sustainable — reported waste collected",
+      "value": 640.28,
+      "unit": "tonnes",
+      "period": "Aug–Sep 2026",
+      "verification": "organiser_reported",
+      "source_label": "We The Leaders theme report",
+      "source_url": "https://www.wetheleader.org/theme-detail",
+      "caveat": "Measured disposal-chain verification not included."
+    },
+    {
+      "id": "m5",
+      "label": "Clean & Sustainable — saplings planted",
+      "value": 1324262,
+      "unit": "saplings",
+      "period": "Aug–Sep 2026",
+      "verification": "organiser_reported",
+      "source_label": "We The Leaders theme report",
+      "source_url": "https://www.wetheleader.org/theme-detail",
+      "caveat": "Survival at 90 days not established."
+    }
+  ],
+  "district_highlights": [
+    {
+      "district": "Madurai",
+      "value": 51,
+      "label": "July WTL events",
+      "verification": "organiser_reported",
+      "source_url": "https://www.wetheleader.org/newsletter-august-2026"
+    },
+    {
+      "district": "Chennai",
+      "value": 41,
+      "label": "July WTL events",
+      "verification": "organiser_reported",
+      "source_url": "https://www.wetheleader.org/newsletter-august-2026"
+    },
+    {
+      "district": "Coimbatore",
+      "value": 40,
+      "label": "July WTL events",
+      "verification": "organiser_reported",
+      "source_url": "https://www.wetheleader.org/newsletter-august-2026"
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue_tasmac_129",
+      "title": "Follow-up on 129 TASMAC outlet locations",
+      "category": "Public health & regulation",
+      "district": "Statewide",
+      "summary": "WTL published a ground-verification report alleging 129 shops within a 500m radius of protected locations. A policy response and outlet-level outcomes need independent examination. Distinguish the general Rule 8 distances from the separate 2026 executive directive.",
+      "status": "needs_verification",
+      "opened_on": "2026-08-01",
+      "next_step": "Retrieve the underlying outlet list, the government closure/relocation register and the applicable court and policy documents; match shops by identifier, not name alone.",
+      "evidence": [
+        {
+          "id": "ev_tasmac_1",
+          "source_label": "WTL policy-papers library — August ground report",
+          "source_url": "https://www.wetheleader.org/policy-papers",
+          "source_type": "organisation",
+          "published_on": "2026-08-01",
+          "finding": "WTL says it documented 129 outlets and submitted a formal representation.",
+          "stance": "claim"
+        },
+        {
+          "id": "ev_tasmac_2",
+          "source_label": "The New Indian Express — May directive",
+          "source_url": "https://www.newindianexpress.com/states/tamil-nadu/2026/May/12/tn-government-orders-closure-of-717-tasmac-shops-near-schools-temples-and-bus-depots",
+          "source_type": "reporting",
+          "published_on": "2026-05-13",
+          "finding": "Reports an executive order identifying 717 shops for closure on a 500m criterion.",
+          "stance": "context"
+        },
+        {
+          "id": "ev_tasmac_3",
+          "source_label": "The New Indian Express — June closure update",
+          "source_url": "https://timesofindia.indiatimes.com/city/chennai/107-tasmac-outlets-closed-on-friday-to-meet-cm-vijays-717-target-82-in-chennai-region-290-in-madurai-region/articleshow/131539901.cms",
+          "source_type": "reporting",
+          "published_on": "2026-06-06",
+          "finding": "Times of India reports the government said all 717 designated shops had been closed after corrections to the list.",
+          "stance": "context"
+        },
+        {
+          "id": "ev_tasmac_4",
+          "source_label": "DT Next — August Assembly response",
+          "source_url": "https://www.dtnext.in/amp/story/news/tamilnadu/will-shift-all-tasmac-outlets-violating-distance-norms-assures-minister-vignesh",
+          "source_type": "reporting",
+          "published_on": "2026-08-08",
+          "finding": "Minister reported 717 closures and promised further relocations for outstanding violations. Does not establish disposition of WTL's separate list of 129.",
+          "stance": "context"
+        }
+      ]
+    },
+    {
+      "id": "issue_sapling_survival",
+      "title": "Measure sapling survival after the clean-up campaign",
+      "category": "Environment",
+      "district": "Statewide",
+      "summary": "WTL reports 13,24,262 saplings planted during August–September. Planting count alone does not measure survival, site suitability or sustained ecological benefit.",
+      "status": "needs_verification",
+      "opened_on": "2026-09-30",
+      "next_step": "Obtain planting-location samples, species and maintenance records; randomly verify survival at 30 and 90 days and publish error bounds.",
+      "evidence": [
+        {
+          "id": "ev_tree_1",
+          "source_label": "WTL Clean and Sustainable Tamil Nadu theme report",
+          "source_url": "https://www.wetheleader.org/theme-detail",
+          "source_type": "organisation",
+          "published_on": "2026-09-30",
+          "finding": "Programme reports 13,24,262 planted trees and 640.28 tonnes of collected waste.",
+          "stance": "claim"
+        }
+      ]
+    },
+    {
+      "id": "issue_women_safety",
+      "title": "Design a verifiable women's public-safety issue register",
+      "category": "Safety & public services",
+      "district": "Statewide",
+      "summary": "The WTL October theme concerns women’s safety and empowerment. A neutral record could track public facility issues without collecting identifying victim stories.",
+      "status": "open_question",
+      "opened_on": "2026-10-01",
+      "next_step": "Choose a voluntary, anonymous facility-audit workflow with community partners, a safe reporting protocol and clear agency response tracking.",
+      "evidence": [
+        {
+          "id": "ev_women_1",
+          "source_label": "WTL October policy paper",
+          "source_url": "https://www.wetheleader.org/policy-papers",
+          "source_type": "organisation",
+          "published_on": "2026-10-01",
+          "finding": "WTL lists women’s safety and empowerment as an October programme theme.",
+          "stance": "context"
+        }
+      ]
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "fixmystreet",
+      "name": "FixMyStreet",
+      "region": "United Kingdom",
+      "mechanism": "Location-based civic issue reporting with routing to responsible authorities and publicly visible updates.",
+      "tn_pilot": "Pilot streetlights, drains and solid-waste issues in one consenting municipality. Build around existing grievance channels.",
+      "metrics": [
+        "Correctly routed reports (%)",
+        "Median acknowledgement days",
+        "Evidence-backed resolution rate (%)"
+      ],
+      "constraints": [
+        "Government participation is not assumed",
+        "Tamil-language and assisted offline intake",
+        "No publication of personal complainant details"
+      ],
+      "source_label": "mySociety official source code",
+      "source_url": "https://github.com/mysociety/fixmystreet"
+    },
+    {
+      "id": "decidim",
+      "name": "Decidim",
+      "region": "Barcelona, Spain",
+      "mechanism": "Transparent public proposals, deliberation and documented decisions across online/offline processes.",
+      "tn_pilot": "Run an open panchayat-priorities consultation and publish decisions and reasons for accepting or rejecting proposals.",
+      "metrics": [
+        "Number of considered proposals",
+        "Published decision explanations (%)",
+        "Participant access through assisted/offline channels"
+      ],
+      "constraints": [
+        "Consultations do not equal statistically representative opinion",
+        "Translation and moderation capacity",
+        "Institutional response commitment"
+      ],
+      "source_label": "Decidim platform",
+      "source_url": "https://decidim.org/"
+    },
+    {
+      "id": "vtaiwan",
+      "name": "vTaiwan / Pol.is",
+      "region": "Taiwan",
+      "mechanism": "Deliberation to surface points of agreement/disagreement across public policy proposals.",
+      "tn_pilot": "Hold an open youth-skilling deliberation combining online ideas with meetings and a published report.",
+      "metrics": [
+        "Distinct themes considered",
+        "Transparent response to proposals (%)",
+        "Participant diversity assessed without identity profiling"
+      ],
+      "constraints": [
+        "Self-selection bias",
+        "Facilitator skill and community accessibility",
+        "Proposals require institutional follow-through"
+      ],
+      "source_label": "vTaiwan information site",
+      "source_url": "https://info.vtaiwan.tw/"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_eci",
+      "name": "Election Commission — Tamil Nadu 2026 detailed results",
+      "type": "government",
+      "url": "https://www.eci.gov.in/eci-backend/public/all_files/election_report/General_Election_to_the_Legislative_Assembly_of_Tamil_Nadu_2026_2026/10-Detailed_Results_1778165153.pdf",
+      "scope": "Historical electoral results",
+      "verified_as_of": "2026-10-22"
+    },
+    {
+      "id": "src_nfhs",
+      "name": "IIPS — NFHS-6 publication centre",
+      "type": "government",
+      "url": "https://www.nfhsiips.in/nfhsuser/release-details.php",
+      "scope": "District public-health fact sheets; values not ingested yet",
+      "verified_as_of": "2026-10-22"
+    },
+    {
+      "id": "src_wtl",
+      "name": "We The Leaders — impact reports",
+      "type": "organisation",
+      "url": "https://www.wetheleader.org/impact",
+      "scope": "Organiser self-reported activities; not independent impact measurement",
+      "verified_as_of": "2026-10-22"
+    },
+    {
+      "id": "src_tn",
+      "name": "Tamil Nadu Department of Economics and Statistics",
+      "type": "government",
+      "url": "https://des.tn.gov.in/",
+      "scope": "Government statistical handbooks and reports; values not ingested yet",
+      "verified_as_of": "2026-10-22"
+    }
+  ]
+}

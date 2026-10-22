@@ -1,0 +1,8 @@
+# Public static preview only; never expose the unauthenticated write API.
+services:
+  - type: web
+    name: tn-lens-public-preview
+    runtime: static
+    buildCommand: python build.py
+    staticPublishPath: static
+    autoDeployTrigger: commit

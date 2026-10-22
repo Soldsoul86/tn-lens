@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="TN Lens — Independent public evidence and issue intelligence workspace for Tamil Nadu.">
+<title>TN Lens · Public Intelligence</title>
+<style>
+/* STYLES_INJECT */
+</style>
+</head>
+<body>
+<div id="app">
+  <aside class="side" aria-label="Primary navigation">
+    <div class="brandrow"><div class="logo">TN <b>Lens</b></div><div class="sublogo">தமிழ்நாடு • Public Intelligence</div></div>
+    <div class="sidehead">Research workspace</div>
+    <nav class="nav" aria-label="Sections">
+      <button type="button" class="active" data-nav="overview"><span class="symbol">◈</span> Overview</button>
+      <button type="button" data-nav="issues"><span class="symbol">▤</span> Issues & evidence</button>
+      <button type="button" data-nav="tndata"><span class="symbol">▥</span> Tamil Nadu data</button>
+      <button type="button" data-nav="social"><span class="symbol">◉</span> Social signals</button>
+      <button type="button" data-nav="playbooks"><span class="symbol">◇</span> Global playbooks</button>
+      <button type="button" data-nav="briefs"><span class="symbol">▧</span> Decision briefs</button>
+      <button type="button" data-nav="sources"><span class="symbol">⌁</span> Source library</button>
+    </nav>
+    <div class="sidefoot"><span class="seed">● Independent research</span>Not affiliated with any movement, politician or government.<br><br>Data classifications: official, published reporting, organiser-reported, uploaded-unreviewed.<br><br>v0.1 · No personal voter profiles or forecasts.</div>
+  </aside>
+  <main class="main">
+    <header class="top">
+      <div class="top-left"><span class="dot"></span> Evidence-linked public issues <span class="meta">/</span> Tamil Nadu</div>
+      <div class="top-right"><span id="connection-pill" class="server local">Local workspace</span><button type="button" class="btn quiet" data-action="export-json">Export backup ↓</button></div>
+    </header>
+
+    <section class="view active" id="view_overview" aria-label="Overview">
+      <div class="kicker">Executive context <span id="asof" class="meta" style="margin-left:12px;letter-spacing:0;text-transform:none"></span></div>
+      <h1 class="page-title">Evidence before opinion.<br><span class="accent-number">Action before prediction.</span></h1>
+      <p class="page-lede">A usable intelligence layer for Tamil Nadu public issues. Track what was claimed, what sources actually say, which questions remain open, and whether proposed interventions produce outcomes.</p>
+      <div class="wrap"><button class="btn primary" data-action="new-issue">+ Register public issue</button><button class="btn" data-action="go" data-view="briefs">Open briefing studio →</button></div>
+      <div class="metrics" id="overview_metrics"></div>
+      <div class="cols">
+        <section class="card"><div class="card-head"><h2>Priority research queue</h2><span class="fine">Unresolved questions · not a partisan ranking</span></div><div id="home_decisions"></div></section>
+        <section class="card"><div class="card-head"><h2>How decisions are grounded</h2></div><div id="home_workflow"></div></section>
+      </div>
+      <div class="section-row"><h2 class="section-title">WTL published programme outputs</h2><span class="chip reported">Self-reported, not audited</span></div>
+      <div class="card slim table-wrap"><table><thead><tr><th>Activity</th><th>Reported quantity</th><th>Evidence classification & limits</th><th>Source</th></tr></thead><tbody id="home_programmes"></tbody></table></div>
+      <div class="notice" style="margin-top:17px">Programme activity is not automatically public benefit. Imported public-data values and organisational reports are explicitly marked so reviewers can distinguish observation, assertion and verified outcome.</div>
+    </section>
+
+    <section class="view" id="view_issues" aria-label="Issue registry">
+      <div class="page-heading"><div><div class="kicker">Casework / human-reviewable evidence</div><h1 class="page-title">Issues & evidence</h1><p class="page-lede">A traceable record of claims, counter-evidence, unanswered questions and human review decisions.</p></div><button class="btn primary" data-action="new-issue">+ New issue</button></div>
+      <div class="filterrow"><input id="filter_search" type="search" placeholder="Search questions, services and districts" aria-label="Search case records"><select id="filter_status" aria-label="Filter by review status"></select></div>
+      <div class="cases"><div class="case-list" id="case_list"></div><div id="case_detail"></div></div>
+    </section>
+
+    <section class="view" id="view_tndata" aria-label="Tamil Nadu public data">
+      <div class="kicker">Public-data baseline / 38 districts</div><h1 class="page-title">Tamil Nadu data</h1>
+      <p class="page-lede">Preserve official historical results, trace grassroots activity reports to their publisher, and add district indicators without inventing missing values.</p>
+      <div class="cols">
+        <section class="card"><div class="card-head"><h2>2026 Assembly — declared seats</h2><span class="chip">Historical · ECI</span></div><div class="table-wrap"><table><thead><tr><th>Party</th><th>Seats</th><th>Share of 234 seats</th></tr></thead><tbody id="election_seats"></tbody></table></div><p id="data_footnote" class="fine" style="margin-top:14px"></p></section>
+        <div><section class="card"><div class="card-head"><h2>July event distribution (known examples)</h2><span class="chip reported">Organiser report</span></div><div class="table-wrap"><table><thead><tr><th>District</th><th>Events</th><th>Class</th><th>Source</th></tr></thead><tbody id="district_events"></tbody></table></div><p class="fine">These are three district examples from WTL's newsletter, not a complete district ranking.</p></section><div class="notice cool" style="margin-top:14px">NFHS-6 district fact sheets and Tamil Nadu statistical handbooks are registered under Source Library. Their numerical district indicators are <b>not yet ingested</b>.</div></div>
+      </div>
+      <div class="section-row"><div><h2 class="section-title">District indicator workspace</h2><p class="fine">Every uploaded number carries its reference and stays unreviewed.</p></div><div class="wrap"><button class="btn quiet" data-action="template-indicators">Download CSV template ↓</button><button class="btn primary" data-action="import-indicators">Import indicators CSV ↑</button></div></div>
+      <div class="card"><div class="select-row" style="margin-bottom:15px"><label for="district_filter" class="fine">District</label><select id="district_filter"></select><span class="fine" id="indicator_count"></span></div><div id="indicator_rows"></div></div>
+    </section>
+
+    <section class="view" id="view_social" aria-label="Public social signals">
+      <div class="kicker">Public channels / no personal profiling</div><h1 class="page-title">Social signals</h1>
+      <p class="page-lede">A transparent measurement of published post topics, reach and recorded interactions. Import public account metrics from permitted exports; no scraping, private messages, inferred vote intention or demographic targeting.</p>
+      <div class="wrap"><button class="btn primary" data-action="import-social">Import public-post CSV ↑</button><button class="btn quiet" data-action="template-social">Download CSV template ↓</button></div>
+      <div class="metrics" id="social_metrics"></div>
+      <div class="cols"><section class="card"><div class="card-head"><h2>Content topic mix</h2><span class="fine">Counts only, not population sentiment</span></div><div id="topic_analysis"></div></section><section class="card"><div class="card-head"><h2>Recently imported posts</h2></div><div id="recent_posts"></div></section></div>
+      <div class="notice cool" style="margin-top:18px"><b>Interpretation guardrail:</b> View counts and engagement do not tell us what Tamil Nadu residents believe or how they will vote. The tool does not infer sentiment, independently verify imported metrics, or provide individual-level targeting.</div>
+    </section>
+
+    <section class="view" id="view_playbooks" aria-label="Global policy playbooks">
+      <div class="kicker">Policy transfer lab</div><h1 class="page-title">Global playbooks</h1>
+      <p class="page-lede">Explore mechanisms that improved public-service participation elsewhere. Adapt with local institutional support, cost control and explicit before/after measurement.</p>
+      <div class="cols3" id="playbooks_grid"></div>
+      <div class="notice" style="margin-top:17px">These are <b>examples to evaluate</b>, not evidence that they are already effective in Tamil Nadu. A pilot should be rejected if local implementation cannot produce a credible measurable benefit.</div>
+    </section>
+
+    <section class="view" id="view_briefs" aria-label="Source-linked briefing studio">
+      <div class="kicker">Decision workspace / deterministic export</div><h1 class="page-title">Decision briefs</h1>
+      <p class="page-lede">Turn one public issue into a portable source-linked research memorandum. This is a structured export of recorded evidence, not an AI answer.</p>
+      <div class="cols"><div><h2 class="section-title" style="margin-bottom:13px">Select an issue</h2><div class="question-cards" id="brief_issues"></div><div class="notice cool" style="margin-top:14px">For every draft, a reviewer should ask: What is confirmed? What is only claimed? What outcome evidence would change the decision?</div></div><section class="card"><div class="card-head"><h2>Export preview</h2><span class="chip">Markdown</span></div><div class="wrap" id="brief_actions" style="margin-bottom:12px"><button class="btn primary" data-action="download-brief">Download .md ↓</button><button class="btn" data-action="copy-brief">Copy briefing</button></div><div class="brief-preview" id="brief_content"></div></section></div>
+    </section>
+
+    <section class="view" id="view_sources" aria-label="Source library">
+      <div class="kicker">Data provenance / registry</div><h1 class="page-title">Source library</h1>
+      <p class="page-lede">Where the information comes from, which type of evidence it represents and what remains to be imported. A registered source is not automatically a synced feed.</p>
+      <div class="card table-wrap"><table><thead><tr><th>Source and coverage</th><th>Type</th><th>Checked as of</th><th>Access</th></tr></thead><tbody id="source_rows"></tbody></table></div>
+      <div class="notice cool" style="margin-top:17px">In this release, the source register is versioned seed data. Social ingestion and district indicators use manual CSVs. Automated live-source monitoring, data validation workflows and multi-user access are not yet implemented.</div>
+      <div class="section-row"><h2 class="section-title">Local prototype controls</h2></div><div class="card slim"><p class="fine">If you opened the standalone HTML file, changes persist in this browser where storage is available. Export a backup before resetting or switching devices. When served through the API, the shared workspace is kept in local SQLite.</p><button class="btn danger" data-action="reset-local">Reset local demo data</button></div>
+    </section>
+
+    <footer class="footer"><span>TN Lens v0.1 · Evidence-led civic research · No affiliation or endorsement implied.</span><span>Public claims ≠ independently verified outcomes · Static sources dated 22 Oct 2026.</span></footer>
+  </main>
+</div>
+<input id="csv_file" type="file" accept=".csv,text/csv" style="display:none" aria-label="CSV import">
+<div class="modal-backdrop" id="modal_backdrop" aria-hidden="true"><div class="modal" id="modal_root" role="dialog" aria-modal="true" aria-label="Edit research record"></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script type="application/json" id="seed-data">/* SEED_INJECT */</script>
+<script>
+/* SCRIPT_INJECT */
+</script>
+</body></html>

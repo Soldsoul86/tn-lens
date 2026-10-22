@@ -2,9 +2,11 @@
 (() => {
 'use strict';
 const BOOT=JSON.parse(document.getElementById('seed-data').textContent);
+const DEVELOPMENT=JSON.parse(document.getElementById('development-data').textContent);
 const STORAGE_KEY='tn-lens-v01-local';
 const STATUSES=['open_question','needs_verification','in_review','corroborated','disputed','resolved'];
 const PLATFORMS={X:['x.com','twitter.com'],Instagram:['instagram.com'],YouTube:['youtube.com','youtu.be'],Facebook:['facebook.com','fb.com'],LinkedIn:['linkedin.com'],Threads:['threads.net']};
+let developmentSelected='environment';
 let appData,mode='local',selectedIssue='issue_tasmac_129',selectedBrief='issue_tasmac_129',issueQuery='',issueStatus='all',districtChoice='All districts',csvTarget='social',toastTimer;
 const $=id=>document.getElementById(id);
 const clone=o=>JSON.parse(JSON.stringify(o));
@@ -28,7 +30,45 @@ async function startup(){
 }
 function navigate(view){document.querySelectorAll('[data-nav]').forEach(n=>{const on=n.dataset.nav===view;n.classList.toggle('active',on);n.setAttribute('aria-current',on?'page':'false');});document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view_'+view));window.scrollTo(0,0);}
 function badge(s){return `<span class="chip ${h(s)}">${label(s)}</span>`;}
-function renderAll(){renderOverview();renderIssues();renderData();renderSocial();renderPlaybooks();renderBriefs();renderSources();}
+function renderAll(){renderDevelopment();renderOverview();renderIssues();renderData();renderSocial();renderPlaybooks();renderBriefs();renderSources();}
+function makeDevelopmentNote(g){
+  if(!g)return "# No development goal selected";
+  const bullets=a=>a.map(x=>"- "+x).join("\n");
+  const n=g.north_star;
+  return "# TN Lens 2031 · "+g.title+"\n\nIndependent public research draft · "+DEVELOPMENT.metadata.as_of+"\n\n"+
+    "**Provenance:** "+g.intent_attribution+"\n**Intent / suggested aspiration:** "+g.intent+"\n"+
+    (g.intent_source_url?"**Published theme:** "+g.intent_source_url+"\n":"")+
+    "\n## Resident outcome\n"+g.outcome+
+    "\n\n## Measurement contract\n- Indicator: "+n.indicator+"\n- Source to validate: "+n.source_to_validate+
+    "\n- Baseline: Not yet verified\n- 2031 quantitative target: Not set\n"+
+    "\n## Possible policy levers\n"+bullets(g.policy_levers)+"\n\n## Responsible institutions / partners\n"+bullets(g.delivery_actors)+
+    "\n\n## Small testable pilot\n"+g.pilot+"\n\n## Constraints, risks and costs\n"+bullets(g.constraints)+
+    "\n\n## Next evidence request\n"+g.next_evidence+"\n\n## Dated state context\n"+
+    bullets(DEVELOPMENT.context.map(x=>x.label+": "+x.value+" ("+x.period+"), "+x.source_url))+
+    "\n\n---\nIndependent research, not a movement endorsement or government commitment. No election prediction or voter profiling.\n";
+}
+function renderDevelopment(){
+  const context=DEVELOPMENT.context, goals=DEVELOPMENT.outcomes;
+  const safe=goals.some(g=>g.id===developmentSelected);
+  if(!safe)developmentSelected=goals[0].id;
+  $("development_context").innerHTML=context.map(x=>`<div class="metric"><div class="label">${h(x.label)}</div><strong>${h(x.value)}</strong><small>${h(x.period)}</small><p class="fine" style="margin:9px 0 0">${h(x.caveat)}</p><div class="dev-source">${link(x.source_url,"Source ↗")}</div></div>`).join("");
+  $("development_goals").innerHTML=goals.map(g=>`<button class="dev-goal ${g.id===developmentSelected?"active":""}" type="button" data-action="select-development" data-id="${h(g.id)}"><span class="fine">${h(g.domain)}</span><strong>${h(g.title)}</strong><span class="fine">Baseline & 2031 target: pending verification</span></button>`).join("");
+  const g=goals.find(x=>x.id===developmentSelected), n=g.north_star;
+  $("development_detail").innerHTML=`
+  <div class="wrap" style="align-items:center;justify-content:space-between"><span class="kicker">2031 outcome compact</span><span class="chip">Unendorsed research</span></div>
+  <h2>${h(g.title)}</h2>
+  <div class="detail-label">Political intention / public aspiration</div><p>${h(g.intent)}</p><p class="fine">${h(g.intent_attribution)}</p>
+  ${g.intent_source_url?link(g.intent_source_url,"Inspect published theme ↗"):"<p class='fine'>Independently proposed example, not attributed to any political actor.</p>"}
+  <div class="detail-label">Intended public development outcome</div><p>${h(g.outcome)}</p>
+  <div class="dev-indicator"><div class="fine">Measurable outcome · official baseline pending</div><strong>${h(n.indicator)}</strong><div class="fine">Potential data source: ${h(n.source_to_validate)}</div><span class="chip open_question">No invented 2031 target</span></div>
+  <div class="dev-matrix"><div><div class="detail-label">Possible policy mechanisms</div><ul>${g.policy_levers.map(x=>`<li>${h(x)}</li>`).join("")}</ul></div>
+  <div><div class="detail-label">Institutions / authority</div><ul>${g.delivery_actors.map(x=>`<li>${h(x)}</li>`).join("")}</ul></div></div>
+  <div class="detail-label">Testable local experiment</div><p>${h(g.pilot)}</p>
+  <div class="detail-label">Trade-offs and constraints</div><ul>${g.constraints.map(x=>`<li>${h(x)}</li>`).join("")}</ul>
+  <div class="detail-label">Next public evidence</div><p>${h(g.next_evidence)}</p>
+  <button class="btn primary" data-action="download-development" type="button">Download development note ↓</button>`;
+  $("development_stages").innerHTML=DEVELOPMENT.stages.map((s,i)=>`<div class="dev-step"><span class="dev-step-no">${i+1}</span><span>${h(s)}</span></div>`).join("");
+}
 function renderOverview(){
  const n=appData.issues.length,e=appData.issues.reduce((sum,i)=>sum+i.evidence.length,0),u=appData.issues.filter(i=>!['resolved','corroborated'].includes(i.status)).length;
  $('overview_metrics').innerHTML=`<div class="metric"><div class="label">Issues in evidence register</div><strong>${fmt(n)}</strong><small>Human-reviewable records</small></div><div class="metric"><div class="label">Evidence records</div><strong>${fmt(e)}</strong><small>Links to published sources</small></div><div class="metric"><div class="label">Open / under review</div><strong>${fmt(u)}</strong><small>Not substantiated failures</small></div><div class="metric"><div class="label">Registered public sources</div><strong>${fmt(appData.sources.length)}</strong><small>Not automatic data feeds</small></div>`;
@@ -220,6 +260,8 @@ document.addEventListener('click',async event=>{
  try{
   switch(b.dataset.action){
    case 'go':navigate(b.dataset.view);break;
+   case 'select-development':developmentSelected=b.dataset.id;renderDevelopment();break;
+   case 'download-development':{const g=DEVELOPMENT.outcomes.find(x=>x.id===developmentSelected);if(g)download('tn-lens-2031-'+g.id+'.md',makeDevelopmentNote(g),'text/markdown');break;}
    case 'show-issue':selectedIssue=b.dataset.id;issueQuery='';issueStatus='all';renderIssues();navigate('issues');break;
    case 'select-issue':selectedIssue=b.dataset.id;renderCaseList();renderCaseDetail();break;
    case 'select-brief':selectedBrief=b.dataset.id;renderBriefs();break;

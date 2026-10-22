@@ -1,4 +1,4 @@
-# TN Lens — v0.1
+# TN Lens — v0.2
 
 **A working source-linked Tamil Nadu public-intelligence workspace.** Not affiliated with We The Leaders, K. Annamalai, or a government body.
 
@@ -109,3 +109,10 @@ The source repository is https://github.com/Soldsoul86/tn-lens. The public previ
 3. Introduce researcher accounts, evidence review permissions and source correction history **before** public shared editing.
 4. Test one public-service pilot with a cooperating local body: measure baseline, official response time and verified resolution, not media impressions.
 5. Invite independent researchers to challenge conclusions and attach contrary evidence. Document the methods and uncertainty.
+## Tamil Nadu 2031 development view (v0.2)
+
+The new **Tamil Nadu 2031** section connects attributed public programme themes or clearly-labelled independent civic aspirations to observable development outcomes. Seven research compacts cover livelihoods, learning, primary care, water, environmental outcomes, public safety and service delivery. Each records possible indicators, institutional responsibility, policy options, feasibility constraints and a testable pilot.
+
+Official and public-source context is dated; numeric 2031 targets and district baselines remain **unset** until verifiable data and review exist. No political endorsement, party ranking, voter profiling, election forecast or causal impact claim is implied. Select any compact and export its source-linked Markdown development note.
+
+Data: `data/development2031.json`. Methodology and caveats: `DEVELOPMENT_2031.md`. The Render public static preview embeds the catalog at build time through `build.py`; it is not a live API feed.

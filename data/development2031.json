@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "title": "TN Lens · Tamil Nadu 2031 Development",
+    "as_of": "2026-10-22",
+    "status": "Independent, unendorsed research framework",
+    "description": "From public intentions and civic aspirations to measurable resident outcomes, feasible policies, pilots and verifiable accountability. No voter targeting or election forecasting."
+  },
+  "context": [
+    {
+      "id": "gsdp",
+      "label": "Projected Tamil Nadu GSDP",
+      "value": "₹40.67 lakh crore",
+      "period": "FY 2026–27 budget estimate",
+      "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2026-27",
+      "caveat": "Current-price economic projection, not realised household income."
+    },
+    {
+      "id": "spending",
+      "label": "Expenditure excluding debt repayment",
+      "value": "₹4.73 lakh crore",
+      "period": "FY 2026–27 budget estimate",
+      "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2026-27",
+      "caveat": "Total planned net spending, not discretionary funding for new policies."
+    },
+    {
+      "id": "committed",
+      "label": "Committed spending / revenue receipts",
+      "value": "61%",
+      "period": "FY 2026–27 budget estimate",
+      "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2026-27",
+      "caveat": "Salary, pensions and interest; limits fiscal room."
+    },
+    {
+      "id": "sdg",
+      "label": "Tamil Nadu SDG Index",
+      "value": "78 / 100",
+      "period": "2023–24 historical index",
+      "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2032859",
+      "caveat": "Dated 2023–24 measure, not a 2026 status assessment."
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "livelihoods",
+      "title": "Productive jobs and real earnings",
+      "domain": "Economic opportunity",
+      "intent": "Create durable livelihoods and rising household earning capacity",
+      "intent_class": "illustrative_unendorsed",
+      "intent_attribution": "Independent research candidate; not a statement or pledge by WTL",
+      "intent_source_url": null,
+      "outcome": "More residents experience secure productive employment and real income growth",
+      "north_star": {
+        "indicator": "Comparable inflation-adjusted earnings and sustained job retention",
+        "source_to_validate": "MoSPI PLFS, Tamil Nadu state statistics and independently validated cohort results",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Employer-linked training",
+        "Transport links to employment centres",
+        "MSME productivity and market access"
+      ],
+      "delivery_actors": [
+        "State skilling and industry departments",
+        "Employers and educational institutions",
+        "Transport and local authorities"
+      ],
+      "constraints": [
+        "Programme attendance does not establish sustained employment",
+        "District earnings may lack a comparable dataset",
+        "Pilot costs and job displacement effects require examination"
+      ],
+      "pilot": "Verify six-month employment retention for one consent-based skilling cohort",
+      "next_evidence": "Confirm the methodology and coverage of an official employment and earnings baseline."
+    },
+    {
+      "id": "learning",
+      "title": "School learning and future opportunity",
+      "domain": "Education",
+      "intent": "Enable stronger foundational learning and pathways to productive life",
+      "intent_class": "illustrative_unendorsed",
+      "intent_attribution": "Independent research candidate; not a statement or pledge by WTL",
+      "intent_source_url": null,
+      "outcome": "More children demonstrate learning gains and successful transitions",
+      "north_star": {
+        "indicator": "Comparable foundational learning proficiency and progress",
+        "source_to_validate": "National Achievement Survey, state assessment sources and UDISE+",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Foundational remediation",
+        "Teacher support and feedback",
+        "Accessible learning and transport"
+      ],
+      "delivery_actors": [
+        "School Education Department",
+        "District education officers",
+        "Participating schools"
+      ],
+      "constraints": [
+        "Do not publish child-level identifiable records",
+        "Test design must be comparable",
+        "Causal claims require careful evaluation"
+      ],
+      "pilot": "Pilot permission-based learning support with baseline and comparable follow-up assessments",
+      "next_evidence": "Select one publicly documented and comparable assessment series."
+    },
+    {
+      "id": "health",
+      "title": "Dependable primary care and prevention",
+      "domain": "Public health",
+      "intent": "Make essential preventive and primary healthcare reliable and accessible",
+      "intent_class": "illustrative_unendorsed",
+      "intent_attribution": "Independent research candidate; not a statement or pledge by WTL",
+      "intent_source_url": null,
+      "outcome": "Better continuity of basic care without collecting private medical histories",
+      "north_star": {
+        "indicator": "Aggregated service availability and care-continuity indicators",
+        "source_to_validate": "NFHS district fact sheets and Tamil Nadu official health data",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Essential supply reliability",
+        "Referral follow-through",
+        "Transparent facility service standards"
+      ],
+      "delivery_actors": [
+        "Health and Family Welfare Department",
+        "Public-health institutions",
+        "Independent reviewers"
+      ],
+      "constraints": [
+        "Do not collect identifiable patient information",
+        "Administrative throughput differs from population health outcomes",
+        "Service data needs coverage checks"
+      ],
+      "pilot": "Audit facility service reliability in a cooperating area and publish only aggregate findings",
+      "next_evidence": "Ingest a small set of dated comparable official district health indicators."
+    },
+    {
+      "id": "water",
+      "title": "Reliable water and climate resilience",
+      "domain": "Water & climate",
+      "intent": "Improve reliable safe water delivery and reduce disruption from floods and droughts",
+      "intent_class": "illustrative_unendorsed",
+      "intent_attribution": "Independent research candidate; not a statement or pledge by WTL",
+      "intent_source_url": null,
+      "outcome": "More households experience reliable water and fewer days of service interruption",
+      "north_star": {
+        "indicator": "Verified water service continuity and quality compliance",
+        "source_to_validate": "Municipal water utilities and state water / public health statistics",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Leakage reduction",
+        "Regular quality testing",
+        "Drainage and contingency planning"
+      ],
+      "delivery_actors": [
+        "Water supply boards",
+        "Local governments",
+        "Relevant state agencies"
+      ],
+      "constraints": [
+        "Connection totals are not service continuity",
+        "Weather and rainfall require contextual controls",
+        "Operating and capital funding differ"
+      ],
+      "pilot": "Measure water quality and interruption hours with one consenting service provider",
+      "next_evidence": "Find published municipal water-continuity and quality measurement standards."
+    },
+    {
+      "id": "environment",
+      "title": "Environmental outcomes, not event counts",
+      "domain": "Ecology & clean places",
+      "intent": "Clean and Sustainable Tamil Nadu — published programme theme",
+      "intent_class": "published_theme_not_pledge",
+      "intent_attribution": "WTL published programme theme, not a quantified 2031 pledge",
+      "intent_source_url": "https://www.wetheleader.org/policy-papers",
+      "outcome": "More surviving suitable trees and documented waste-disposal outcomes",
+      "north_star": {
+        "indicator": "Independently measured survival after 90 and 180 days",
+        "source_to_validate": "WTL site records, local land and forestry records, independent random sampling",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Native-species suitability",
+        "Recorded aftercare",
+        "Waste disposal-chain verification"
+      ],
+      "delivery_actors": [
+        "Community organisers",
+        "Local environmental authorities where involved",
+        "Independent ecological reviewers"
+      ],
+      "constraints": [
+        "Organisation planting totals are outputs, not impact",
+        "Convenience samples cannot establish state outcomes",
+        "Land rights and aftercare may constrain follow-through"
+      ],
+      "pilot": "Sample recorded planting sites at random and publish method, uncertainty and survival",
+      "next_evidence": "Obtain a site-level sampling frame and repeat measurements."
+    },
+    {
+      "id": "safety",
+      "title": "Accessible and safer public facilities",
+      "domain": "Public safety and inclusion",
+      "intent": "Women Safety and Empowerment — published programme theme",
+      "intent_class": "published_theme_not_pledge",
+      "intent_attribution": "WTL published programme theme, not a quantified 2031 pledge",
+      "intent_source_url": "https://www.wetheleader.org/policy-papers",
+      "outcome": "Public spaces and services address observable access and safety defects",
+      "north_star": {
+        "indicator": "Verified repair of public-facility defects within published service standards",
+        "source_to_validate": "Municipal asset and maintenance registers, audited public facilities",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Accessible facility design",
+        "Maintenance routing and accountability",
+        "Aggregate response-time reporting"
+      ],
+      "delivery_actors": [
+        "Urban local bodies",
+        "Transit operators",
+        "Public works and safety agencies"
+      ],
+      "constraints": [
+        "A facility audit is not a measure of crime prevalence",
+        "Never expose victim records or personal locations",
+        "Survey evidence must be interpreted carefully"
+      ],
+      "pilot": "With municipal consent audit streetlights and transit waiting areas with no personal reports",
+      "next_evidence": "Agree a public facility standard and follow the official repair process."
+    },
+    {
+      "id": "services",
+      "title": "Public services with verified resolution",
+      "domain": "Governance and fiscal delivery",
+      "intent": "Ensure public institutions can be held to transparent and measurable service standards",
+      "intent_class": "illustrative_unendorsed",
+      "intent_attribution": "Independent research candidate; not a statement or pledge by WTL",
+      "intent_source_url": null,
+      "outcome": "More public-service problems are resolved with durable, independently checked outcomes",
+      "north_star": {
+        "indicator": "Verified complaint resolution and elapsed response time",
+        "source_to_validate": "Local grievance portals, public works completion reports and independent outcome checks",
+        "baseline": null,
+        "target_2031": null
+      },
+      "policy_levers": [
+        "Clear service ownership",
+        "Public status and response standards",
+        "Maintenance and follow-up audits"
+      ],
+      "delivery_actors": [
+        "Municipalities and panchayats",
+        "Line departments",
+        "Independent researchers and residents"
+      ],
+      "constraints": [
+        "Closing a ticket is not proof of resolved service",
+        "Existing authorities must agree to participate",
+        "Financial and privacy controls are required"
+      ],
+      "pilot": "Cooperate with one local authority on streetlight or drainage case closure verification",
+      "next_evidence": "Confirm an institutional counterpart, baseline throughput and resolution definition."
+    }
+  ],
+  "stages": [
+    "Publicly stated intention or clearly labelled independent aspiration",
+    "State / district starting point and source quality",
+    "Resident outcome and measurable indicators",
+    "Policy alternatives, legal powers and responsible institutions",
+    "Fiscal cost, trade-offs and implementation conditions",
+    "Small voluntary pilot and independently reviewable comparison",
+    "Observed public benefit, contrary evidence and corrections"
+  ],
+  "safeguards": [
+    "No political endorsement or fictional candidate pledge",
+    "No inferred voter preferences, scores or election forecasts",
+    "No implied causality from event or engagement counts",
+    "Keep unverified baselines and future numerical targets empty",
+    "Avoid identifiable health, safety, education and personal records"
+  ]
+}

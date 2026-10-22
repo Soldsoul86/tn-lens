@@ -16,6 +16,7 @@
     <div class="sidehead">Research workspace</div>
     <nav class="nav" aria-label="Sections">
       <button type="button" class="active" data-nav="overview"><span class="symbol">◈</span> Overview</button>
+      <button type="button" data-nav="development"><span class="symbol">◎</span> Tamil Nadu 2031</button>
       <button type="button" data-nav="issues"><span class="symbol">▤</span> Issues & evidence</button>
       <button type="button" data-nav="tndata"><span class="symbol">▥</span> Tamil Nadu data</button>
       <button type="button" data-nav="social"><span class="symbol">◉</span> Social signals</button>
@@ -35,7 +36,7 @@
       <div class="kicker">Executive context <span id="asof" class="meta" style="margin-left:12px;letter-spacing:0;text-transform:none"></span></div>
       <h1 class="page-title">Evidence before opinion.<br><span class="accent-number">Action before prediction.</span></h1>
       <p class="page-lede">A usable intelligence layer for Tamil Nadu public issues. Track what was claimed, what sources actually say, which questions remain open, and whether proposed interventions produce outcomes.</p>
-      <div class="wrap"><button class="btn primary" data-action="new-issue">+ Register public issue</button><button class="btn" data-action="go" data-view="briefs">Open briefing studio →</button></div>
+      <div class="wrap"><button class="btn primary" data-action="go" data-view="development">Explore Tamil Nadu 2031 →</button><button class="btn" data-action="new-issue">+ Register public issue</button><button class="btn" data-action="go" data-view="briefs">Open briefing studio →</button></div>
       <div class="metrics" id="overview_metrics"></div>
       <div class="cols">
         <section class="card"><div class="card-head"><h2>Priority research queue</h2><span class="fine">Unresolved questions · not a partisan ranking</span></div><div id="home_decisions"></div></section>
@@ -44,6 +45,21 @@
       <div class="section-row"><h2 class="section-title">WTL published programme outputs</h2><span class="chip reported">Self-reported, not audited</span></div>
       <div class="card slim table-wrap"><table><thead><tr><th>Activity</th><th>Reported quantity</th><th>Evidence classification & limits</th><th>Source</th></tr></thead><tbody id="home_programmes"></tbody></table></div>
       <div class="notice" style="margin-top:17px">Programme activity is not automatically public benefit. Imported public-data values and organisational reports are explicitly marked so reviewers can distinguish observation, assertion and verified outcome.</div>
+    </section>
+
+
+    <section class="view" id="view_development" aria-label="Tamil Nadu development outcomes for 2031">
+      <div class="kicker">Long-term public results · no election forecasting</div>
+      <h1 class="page-title">Tamil Nadu <span class="accent-number">2031</span></h1>
+      <p class="page-lede">Connect public intentions and independent civic aspirations to measurable improvements in Tamil Nadu, the institutions with power to act, financing constraints and verifiable results.</p>
+      <div class="notice cool">An intention is not a policy, a programme activity is not a resident outcome, and a published theme is not a politician's 2031 pledge. <b>No numerical target is asserted without baseline evidence and feasibility review.</b></div>
+      <div class="section-row"><h2 class="section-title">Dated development context</h2><span class="fine">Official / public-source historical and budget figures</span></div>
+      <div class="metrics dev-context" id="development_context"></div>
+      <div class="section-row"><h2 class="section-title">Development outcome compacts</h2><span class="fine">Select a domain to inspect implementation</span></div>
+      <div class="dev-layout"><div class="dev-goals" id="development_goals"></div><section class="card dev-detail" id="development_detail" aria-live="polite"></section></div>
+      <div class="section-row"><h2 class="section-title">How intent becomes public benefit</h2></div>
+      <div class="dev-stages" id="development_stages"></div>
+      <div class="notice" style="margin-top:18px">The platform records proposals, uncertainties and independently verifiable results. It does not measure popularity, infer votes or presume any party has endorsed these research candidates.</div>
     </section>
 
     <section class="view" id="view_issues" aria-label="Issue registry">
@@ -93,13 +109,14 @@
       <div class="section-row"><h2 class="section-title">Local prototype controls</h2></div><div class="card slim"><p class="fine">If you opened the standalone HTML file, changes persist in this browser where storage is available. Export a backup before resetting or switching devices. When served through the API, the shared workspace is kept in local SQLite.</p><button class="btn danger" data-action="reset-local">Reset local demo data</button></div>
     </section>
 
-    <footer class="footer"><span>TN Lens v0.1 · Evidence-led civic research · No affiliation or endorsement implied.</span><span>Public claims ≠ independently verified outcomes · Static sources dated 22 Oct 2026.</span></footer>
+    <footer class="footer"><span>TN Lens v0.2 · Evidence-led civic research · No affiliation or endorsement implied.</span><span>Public claims ≠ independently verified outcomes · Static sources dated 22 Oct 2026.</span></footer>
   </main>
 </div>
 <input id="csv_file" type="file" accept=".csv,text/csv" style="display:none" aria-label="CSV import">
 <div class="modal-backdrop" id="modal_backdrop" aria-hidden="true"><div class="modal" id="modal_root" role="dialog" aria-modal="true" aria-label="Edit research record"></div></div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="seed-data">/* SEED_INJECT */</script>
+<script type="application/json" id="development-data">/* DEVELOPMENT_INJECT */</script>
 <script>
 /* SCRIPT_INJECT */
 </script>

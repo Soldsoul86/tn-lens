@@ -1,4 +1,4 @@
-/* TN Lens v0.1 — portable, public-source civic research workspace. */
+/* TN Lens v0.3 — portable, public-source civic research workspace. */
 (() => {
 'use strict';
 const BOOT=JSON.parse(document.getElementById('seed-data').textContent);
@@ -26,7 +26,7 @@ async function startup(){
  if(!appData){try{const s=localStorage.getItem(STORAGE_KEY);appData=s?JSON.parse(s):cleanSeed();}catch{appData=cleanSeed();}mode='local';}
  if(!appData.issues||!appData.election){appData=cleanSeed();mode='local';}
  $('connection-pill').textContent=mode==='server'?'SQLite connected':'Local workspace';$('connection-pill').classList.toggle('local',mode!=='server');
- $('asof').textContent='Source snapshot '+(appData.metadata?.snapshot_as_of||'2026-10-22');renderAll();navigate('overview');
+ $('asof').textContent='Source snapshot '+(appData.metadata?.snapshot_as_of||'2026-10-22');renderAll();navigate('social');
 }
 function navigate(view){document.querySelectorAll('[data-nav]').forEach(n=>{const on=n.dataset.nav===view;n.classList.toggle('active',on);n.setAttribute('aria-current',on?'page':'false');});document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view_'+view));window.scrollTo(0,0);}
 function badge(s){return `<span class="chip ${h(s)}">${label(s)}</span>`;}
@@ -100,13 +100,7 @@ function socialSummary(){
  posts.forEach(p=>{const t=groups[p.topic]||={topic:p.topic,count:0,views:0,viewCount:0,engagements:0,engagementsWithViews:0};const interactions=Number(p.likes||0)+Number(p.comments||0)+Number(p.shares||0);t.count++;t.engagements+=interactions;if(p.views!==null&&p.views!==undefined){t.views+=Number(p.views);t.viewCount++;t.engagementsWithViews+=interactions;views+=Number(p.views);countWithViews++;}groups[p.topic]=t;});
  return {posts,topics:Object.values(groups).sort((a,b)=>b.count-a.count||b.views-a.views),views,countWithViews};
 }
-function renderSocial(){
- const d=socialSummary();
- $('social_metrics').innerHTML=`<div class="metric"><div class="label">Public posts imported</div><strong>${fmt(d.posts.length)}</strong><small>Manual source URLs only</small></div><div class="metric"><div class="label">Topics in dataset</div><strong>${fmt(d.topics.length)}</strong><small>Uploader-labelled themes</small></div><div class="metric"><div class="label">Total reported views</div><strong>${fmt(d.views)}</strong><small>${fmt(d.countWithViews)} posts include view counts</small></div><div class="metric"><div class="label">Sentiment / vote intent</div><strong>—</strong><small>Not inferred by this system</small></div>`;
- const max=Math.max(1,...d.topics.map(t=>t.count));
- $('topic_analysis').innerHTML=d.topics.length?d.topics.map(t=>`<div class="topic-card"><div class="topic-head"><strong>${h(t.topic)}</strong><span class="stat">${fmt(t.count)} posts · ${fmt(t.views)} views</span></div><div class="bar" style="margin-bottom:7px"><span style="width:${100*t.count/max}%"></span></div><div class="fine">${fmt(t.engagements)} recorded interactions${t.views>0?` · ${(100*t.engagementsWithViews/t.views).toFixed(2)}% interactions/views (only posts with views)`: ' · rate unavailable'}</div></div>`).join(''):'<div class="data-empty"><strong>No live social dataset connected.</strong><br>Import public organisational account data by CSV. We do not infer opinion from post engagements.</div>';
- $('recent_posts').innerHTML=d.posts.length?`<div class="table-wrap"><table><thead><tr><th>Platform</th><th>Date</th><th>Topic</th><th>Views</th><th>Post</th></tr></thead><tbody>${[...d.posts].sort((a,b)=>b.published_on.localeCompare(a.published_on)).slice(0,15).map(p=>`<tr><td>${h(p.platform)}</td><td>${h(p.published_on)}</td><td>${h(p.topic)}</td><td>${p.views===null?'Unknown':fmt(p.views)}</td><td>${link(p.post_url,'Open ↗')}</td></tr>`).join('')}</tbody></table></div>`:'<p class="fine">No public posts have been imported. Metrics are intentionally blank, not synthetic.</p>';
-}
+function renderSocial(){return renderSocialDashboard();}
 function renderPlaybooks(){
  $('playbooks_grid').innerHTML=appData.playbooks.map(p=>`<article class="playbook"><div class="region">${h(p.region)}</div><h2>${h(p.name)}</h2><p>${h(p.mechanism)}</p><div class="pilot"><b>Potential Tamil Nadu pilot</b><div style="margin-top:7px">${h(p.tn_pilot)}</div></div><h3 style="margin:17px 0 5px">Measurement criteria</h3><ul>${p.metrics.map(x=>`<li>${h(x)}</li>`).join('')}</ul><h3 style="margin:9px 0 5px">Transfer constraints</h3><ul>${p.constraints.map(x=>`<li>${h(x)}</li>`).join('')}</ul><div class="bottom">${link(p.source_url,p.source_label+' ↗')}</div></article>`).join('');
 }
@@ -288,5 +282,6 @@ $('district_filter').addEventListener('change',e=>{districtChoice=e.target.value
 $('csv_file').addEventListener('change',async e=>{try{await importCSV(e.target.files[0]);}catch(x){notify(x.message||'Import failed',true);e.target.value='';}});
 $('modal_backdrop').addEventListener('click',e=>{if(e.target.id==='modal_backdrop')closeModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+/* SOCIAL_MODULE_INJECT */
 startup().catch(e=>notify('App startup failed: '+e.message,true));
 })();

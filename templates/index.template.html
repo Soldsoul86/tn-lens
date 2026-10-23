@@ -15,16 +15,16 @@
     <div class="brandrow"><div class="logo">TN <b>Lens</b></div><div class="sublogo">தமிழ்நாடு • Public Intelligence</div></div>
     <div class="sidehead">Research workspace</div>
     <nav class="nav" aria-label="Sections">
-      <button type="button" class="active" data-nav="overview"><span class="symbol">◈</span> Overview</button>
+      <button type="button" class="active" data-nav="social"><span class="symbol">◉</span> Social dashboard</button>
       <button type="button" data-nav="development"><span class="symbol">◎</span> Tamil Nadu 2031</button>
+      <button type="button" data-nav="overview"><span class="symbol">◈</span> Research overview</button>
       <button type="button" data-nav="issues"><span class="symbol">▤</span> Issues & evidence</button>
       <button type="button" data-nav="tndata"><span class="symbol">▥</span> Tamil Nadu data</button>
-      <button type="button" data-nav="social"><span class="symbol">◉</span> Social signals</button>
       <button type="button" data-nav="playbooks"><span class="symbol">◇</span> Global playbooks</button>
       <button type="button" data-nav="briefs"><span class="symbol">▧</span> Decision briefs</button>
       <button type="button" data-nav="sources"><span class="symbol">⌁</span> Source library</button>
     </nav>
-    <div class="sidefoot"><span class="seed">● Independent research</span>Not affiliated with any movement, politician or government.<br><br>Data classifications: official, published reporting, organiser-reported, uploaded-unreviewed.<br><br>v0.1 · No personal voter profiles or forecasts.</div>
+    <div class="sidefoot"><span class="seed">● Independent research</span>Not affiliated with any movement, politician or government.<br><br>Data classifications: official, published reporting, organiser-reported, uploaded-unreviewed.<br><br>v0.3 · No personal voter profiles or forecasts.</div>
   </aside>
   <main class="main">
     <header class="top">
@@ -79,13 +79,55 @@
       <div class="card"><div class="select-row" style="margin-bottom:15px"><label for="district_filter" class="fine">District</label><select id="district_filter"></select><span class="fine" id="indicator_count"></span></div><div id="indicator_rows"></div></div>
     </section>
 
-    <section class="view" id="view_social" aria-label="Public social signals">
-      <div class="kicker">Public channels / no personal profiling</div><h1 class="page-title">Social signals</h1>
-      <p class="page-lede">A transparent measurement of published post topics, reach and recorded interactions. Import public account metrics from permitted exports; no scraping, private messages, inferred vote intention or demographic targeting.</p>
-      <div class="wrap"><button class="btn primary" data-action="import-social">Import public-post CSV ↑</button><button class="btn quiet" data-action="template-social">Download CSV template ↓</button></div>
-      <div class="metrics" id="social_metrics"></div>
-      <div class="cols"><section class="card"><div class="card-head"><h2>Content topic mix</h2><span class="fine">Counts only, not population sentiment</span></div><div id="topic_analysis"></div></section><section class="card"><div class="card-head"><h2>Recently imported posts</h2></div><div id="recent_posts"></div></section></div>
-      <div class="notice cool" style="margin-top:18px"><b>Interpretation guardrail:</b> View counts and engagement do not tell us what Tamil Nadu residents believe or how they will vote. The tool does not infer sentiment, independently verify imported metrics, or provide individual-level targeting.</div>
+    <section class="view" id="view_social" aria-label="Social intelligence dashboard">
+      <div class="social-hero">
+        <div>
+          <div class="kicker">Public social intelligence / Tamil Nadu 2031</div>
+          <h1 class="page-title">Where public issues <span class="accent-number">surface.</span></h1>
+          <p class="page-lede">YouTube and Instagram content, source by source. Start with what was published, drill through platforms and themes, then compare public discussion with measurable development outcomes.</p>
+          <div class="social-breadcrumbs" id="social_breadcrumbs" aria-label="Social analysis drill-down breadcrumbs"></div>
+        </div>
+        <div class="wrap">
+          <button class="btn primary" data-action="import-social" type="button">+ Import public post data</button>
+          <button class="btn quiet" data-action="template-social" type="button">CSV template ↓</button>
+          <button class="btn quiet" data-social="export-social" type="button">Export analysis ↓</button>
+        </div>
+      </div>
+      <div class="social-source-bar" id="social_status" role="status" aria-live="polite"></div>
+      <div class="social-toolbar">
+        <div class="social-platform-switch" id="social_platform_switch" aria-label="Platform filter"></div>
+        <label class="social-period" for="social_period">Posts published <select id="social_period"><option value="all">All imported dates</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option></select></label>
+      </div>
+      <div class="social-kpis" id="social_metrics" aria-label="Social metrics in selected scope"></div>
+      <div class="social-stages" aria-label="Waterfall research navigation"><span class="active-stage">01 Overview</span><span class="stage-arrow">›</span><span>02 Platform</span><span class="stage-arrow">›</span><span>03 Theme</span><span class="stage-arrow">›</span><span>04 Original post</span><span class="stage-arrow">›</span><span>05 Development outcome</span></div>
+      <div class="social-water-layout">
+        <section class="social-panel social-chart-card" aria-labelledby="social_water_title">
+          <div class="card-head"><h2 id="social_water_title">Contribution waterfall</h2><span class="chip">Recorded interactions</span></div>
+          <p class="social-panel-lede">Each bar contributes likes + comments + shares to a cumulative total. It is not a growth, sentiment or voter-support chart.</p>
+          <div id="social_waterfall" aria-live="polite"></div>
+        </section>
+        <section class="social-panel social-drill-card" aria-labelledby="social_drill_title">
+          <div class="card-head"><h2 id="social_drill_title">Drill down into the source</h2><span class="fine" id="social_drill_stage"></span></div>
+          <p class="social-panel-lede">Follow the evidence path from channel to theme to individual publication.</p>
+          <div id="social_drill" aria-live="polite"></div>
+        </section>
+      </div>
+      <div class="social-bridge-grid">
+        <section class="social-panel social-goal-panel" id="social_goal_context" aria-label="Link social themes to development goals"></section>
+        <section class="social-panel social-source-ready" aria-labelledby="social_sources_title">
+          <div class="social-section-label">Coverage and provenance</div><h3 id="social_sources_title">Sources to connect</h3>
+          <div class="social-source-item"><span class="bullet">◎</span><div><strong>WTL Foundation Instagram</strong><p>The WTL website links to @wetheleadersfoundation. Account metadata is a starting point, not a connected insight feed.</p><a href="https://www.wetheleader.org/" target="_blank" rel="noopener noreferrer">Official site reference ↗</a></div></div>
+          <div class="social-source-item"><span class="bullet">▶</span><div><strong>YouTube channel(s)</strong><p>Channel identity and authorised video metrics need confirmation before any data can be presented as current.</p></div></div>
+          <div class="social-source-item"><span class="bullet">▤</span><div><strong>Public policy evidence</strong><p>Only recorded public URLs and dated indicators can substantiate a claim; social interaction counts are not evidence of development impact.</p></div></div>
+          <div class="social-water-note">Source metrics are captured at import, not updated live. Publication-date filters do not measure views earned during that interval.</div>
+        </section>
+      </div>
+      <section class="card social-post-table" aria-label="Public posts and source references">
+        <div class="card-head"><h2>Source-level posts</h2><button class="btn quiet small" type="button" data-social="reset-social">Reset filters ↺</button></div>
+        <div id="social_post_list"></div>
+        <p class="fine" id="social_evidence_footer" style="margin-top:12px"></p>
+      </section>
+      <div class="notice cool" style="margin-top:17px"><b>Interpretation:</b> Views and interactions are platform-specific, non-representative post metrics. They are not a measure of Tamil Nadu residents' opinions, political preferences or policy outcomes. YouTube changed its public view-count definition for all formats in August 2026; comparisons across periods require care. This screen does not track individuals or access private accounts.</div>
     </section>
 
     <section class="view" id="view_playbooks" aria-label="Global policy playbooks">

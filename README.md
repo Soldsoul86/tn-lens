@@ -116,3 +116,12 @@ The new **Tamil Nadu 2031** section connects attributed public programme themes 
 Official and public-source context is dated; numeric 2031 targets and district baselines remain **unset** until verifiable data and review exist. No political endorsement, party ranking, voter profiling, election forecast or causal impact claim is implied. Select any compact and export its source-linked Markdown development note.
 
 Data: `data/development2031.json`. Methodology and caveats: `DEVELOPMENT_2031.md`. The Render public static preview embeds the catalog at build time through `build.py`; it is not a live API feed.
+
+
+## v0.3 — Social-first cascade dashboard
+
+The first screen is now **Social dashboard**, with a waterfall drilldown from platform → uploader-declared theme → original public post → manually selected 2031 development compact. It features filters for YouTube, Instagram and other supported platforms, publication-date selection, source-level data coverage, an additive interactions waterfall, source details and a Markdown evidence export.
+
+No live platform APIs are connected and **no synthetic engagement metrics are shown**. Import authorised public-post CSVs via the on-screen control. Metrics are importer-supplied and not independently verified; views and engagement are neither population sentiment nor voting intent. The publication-date filter does not measure when cumulative views occurred. Browser-local records are not shared between visitors.
+
+See [SOCIAL_DASHBOARD.md](SOCIAL_DASHBOARD.md) for data provenance, API constraints, waterfall definitions, known limitations and manual acceptance checks. Run the four extra deterministic tests with `node --test tests/test_social_dashboard.cjs`.

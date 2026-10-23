@@ -125,3 +125,11 @@ The first screen is now **Social dashboard**, with a waterfall drilldown from pl
 No live platform APIs are connected and **no synthetic engagement metrics are shown**. Import authorised public-post CSVs via the on-screen control. Metrics are importer-supplied and not independently verified; views and engagement are neither population sentiment nor voting intent. The publication-date filter does not measure when cumulative views occurred. Browser-local records are not shared between visitors.
 
 See [SOCIAL_DASHBOARD.md](SOCIAL_DASHBOARD.md) for data provenance, API constraints, waterfall definitions, known limitations and manual acceptance checks. Run the four extra deterministic tests with `node --test tests/test_social_dashboard.cjs`.
+
+## Ground Loop — proposed one-next-step chat pilot (October 2026)
+
+Open `static/loop/index.html` locally or `/loop/` on the Render static preview. This **fully synthetic browser-local interactive demo** illustrates the proposed flow: participant opt-in → one next step → progress or help request → field coordinator queue → human evidence review → aggregate leadership waterfall. It includes an illustrative volunteer-hour capacity scenario and downloadable aggregate briefing.
+
+The demo **does not** message real participants, send data to a shared server, integrate with WTL's app, provide genuine employment evidence, or operate WhatsApp automation. All built-in records are fiction; browser-created demo records are local only. The operational design and safeguards are in `docs/GROUND_LOOP_TECH_DESIGN.md` and a one-page draft is in `briefs/GROUND_LOOP_ONE_PAGE.md`.
+
+Run the logic acceptance test: `node tests/test_loop_logic.cjs`. Meta's WhatsApp Business Platform policy currently prohibits political parties, politicians, candidates and campaigns; a standalone web chat avoids assuming that API is available.

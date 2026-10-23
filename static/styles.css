@@ -21,3 +21,6 @@
 .dev-source{font-size:11px;margin-top:9px}
 @media(max-width:1000px){.dev-layout{grid-template-columns:1fr}.dev-goals{grid-template-columns:repeat(2,minmax(0,1fr))}.dev-stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:570px){.dev-goals,.dev-matrix,.dev-stages{grid-template-columns:1fr}.dev-context .metric strong{font-size:20px}}
+
+/* Ground Loop entry — public simulation, not a live case-management connection */
+.nav a.loop-shortcut{display:flex;align-items:center;gap:9px;padding:11px 12px;background:#1e403e;border:1px solid #477e70;border-radius:9px;color:#b8f4e2;font-size:12px;font-weight:800;text-decoration:none;margin-bottom:7px}.nav a.loop-shortcut:hover{background:#28544f;color:white}
